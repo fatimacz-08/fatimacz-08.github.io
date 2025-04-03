@@ -8,22 +8,30 @@
     <link rel="icon" type="image/png" href="Images/fz logo.png"> <!-- Exact match -->
     <style>
        
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f4; 
+        }
         header {
             background-image: url('Images/canva-background.png');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 100% 120px; /* Adjusted height slightly from 150px to 120px */
-            background-color: transparent; /* Added for clarity, though not strictly needed */
+            background-color: transparent;
             color: #fff;
             height: 120px; /* Matches the background image height */
-            display: flex; /* Added for centering */
+            margin: 0; /* Explicitly no margin to ensure no top space */
+            padding: 0; /* No padding to ensure flush top */
+            display: flex; /* For centering */
             align-items: center; /* Vertically centers the text */
             justify-content: center; /* Horizontally centers the text */
             text-align: center;
         }
         header h1 {
             margin: 0; /* Removes default margin from h1 */
+            padding: 0; /* Ensures no padding pushes it down */
         }
         nav { text-align: center; margin: 10px 0; }
         nav a { margin: 0 15px; text-decoration: none; color: #E0F7FA; font-weight: bold; transition: color 0.3s, transform 0.3s; }
@@ -105,7 +113,7 @@
 
     <section id="portfolio">
         <h2>Portfolio</h2>
-        <p>Explore some of my recent design projects created with Canva to showcase мои graphic design skills.</p>
+        <p>Explore some of my recent design projects created with Canva to showcase my graphic design skills.</p>
         <div class="portfolio-container">
             <div class="portfolio-item">
                 <img src="Images/logo 1.png" alt="Clarity Craft"> <!-- Exact match -->
