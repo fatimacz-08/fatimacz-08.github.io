@@ -9,7 +9,17 @@
     <style>
         /* Your existing CSS remains unchanged */
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #333; color: #fff; padding: 15px; text-align: center; }
+        
+        /* Updated header with background image */
+        header {
+            background-image: url('canva-background.png');
+            background-size: cover; /* Ensures the image covers the entire header */
+            background-position: center center; /* Centers the image in the header */
+            color: #fff; /* Keeps the text color white for readability */
+            padding: 100px 15px; /* Adds padding to make the text more centered */
+            text-align: center; /* Keeps the text centered */
+        }
+        
         nav { text-align: center; margin: 10px 0; }
         nav a { margin: 0 15px; text-decoration: none; color: #E0F7FA; font-weight: bold; transition: color 0.3s, transform 0.3s; }
         nav a:hover { color: #FFD700; transform: scale(1.1); }
