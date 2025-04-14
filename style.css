@@ -1,8 +1,8 @@
 body {
     background-color: #FFFFFF; /* White background */
     color: #333333; /* Dark gray text for readability */
-    font-family: Arial, sans-serif;
-    margin: 0; /* Remove default margin for full-width layout */
+    font-family: 'Orbitron', Arial, sans-serif; /* Futuristic font for headings */
+    margin: 0;
     padding: 0;
 }
 
@@ -14,17 +14,17 @@ header {
 }
 
 nav {
-    background-color: #006666; /* Darker teal for contrast */
+    background-color: #006666; /* Darker teal */
     padding: 10px;
-    text-align: center; /* Center nav links */
+    text-align: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
-    margin: 0 10px; /* Space out links */
-    transition: background-color 0.3s; /* Smooth hover transition */
+    margin: 0 10px;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
@@ -46,38 +46,39 @@ button:hover {
 
 section {
     padding: 20px;
-    background: #F9F9F9; /* Light gray for section contrast */
+    background: #F9F9F9; /* Light gray for contrast */
     margin: 10px;
     border-radius: 8px;
 }
 
-section h3 {
+section h2, section h3 {
+    font-family: 'Orbitron', Arial, sans-serif;
     font-size: 1.5em;
-    color: #333333;
+    color: #008080; /* Teal for futuristic headings */
     margin: 20px 0 10px;
     text-align: center;
+    text-shadow: 0 0 5px rgba(0, 128, 128, 0.5); /* Subtle glow */
 }
 
 .values-list {
     display: flex;
-    flex-wrap: nowrap; /* Force single row */
-    justify-content: space-between; /* Spread items evenly */
+    flex-wrap: nowrap; /* Single row */
+    justify-content: space-between;
     margin-top: 15px;
 }
 
 .value-item {
-    flex: 1; /* Equal width for each item */
-    margin: 0 10px; /* Horizontal spacing between items */
+    flex: 1;
+    margin: 0 10px;
     text-align: center;
-    padding: 20px; /* Extra padding for oval shape */
-    background: #FFFFFF; /* White background for oval */
-    border-radius: 50% / 30%; /* Oval: more rounded vertically, less horizontally */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: animation 0.3s ease; /* Smooth animation trigger */
+    padding: 20px;
+    background: #FFFFFF; /* White oval */
+    border-radius: 50% / 30%; /* Oval shape */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .value-item:hover {
-    animation: bounce 0.4s ease; /* Bounce animation on hover */
+    animation: bounce 0.4s ease;
 }
 
 @keyframes bounce {
@@ -88,36 +89,57 @@ section h3 {
 }
 
 .portfolio-container {
+    position: relative;
+    margin: 20px 0;
+    padding: 0 40px; /* Space for arrows */
+}
+
+.portfolio-items {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 0;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.portfolio-items::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
 }
 
 .portfolio-item {
-    flex: 1 1 250px; /* Minimum width for responsiveness */
-    margin: 10px;
+    flex: 0 0 280px; /* Fixed width for items */
     text-align: center;
-    background: #FFFFFF; /* White background for items */
+    background: linear-gradient(145deg, #FFFFFF, #E6F2F2); /* Subtle gradient */
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 128, 128, 0.3); /* Neon teal glow */
+    scroll-snap-align: center;
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0; /* For entrance animation */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+
 .portfolio-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #E6F2F2; /* Light teal tint on hover */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.7); /* Brighter neon glow */
+    animation: pulse 0.5s infinite alternate; /* Pulse effect */
 }
 
 .portfolio-item img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px;
     display: block;
-    max-height: 200px; /* Limit height for large Notion images */
-    object-fit: cover; /* Scale images without distortion */
+    max-height: 200px;
+    object-fit: cover;
+    border: 2px solid #008080; /* Teal border */
 }
 
 .portfolio-item h3 {
@@ -129,4 +151,40 @@ section h3 {
 .portfolio-item p {
     font-size: 0.9em;
     color: #666666;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #008080;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.scroll-arrow:hover {
+    background: #006666;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(0, 128, 128, 0.3); }
+    100% { box-shadow: 0 0 20px rgba(0, 128, 128, 0.7); }
 }
