@@ -185,6 +185,19 @@ section h2, section h3 {
     text-align: center;
 }
 
+#services li strong {
+    color: #008080; /* Teal for service item titles */
+}
+
+#services ul {
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto; /* Center the list */
+    margin-right: auto; /* Center the list */
+    text-align: left; /* Keep text left-aligned within items */
+    padding: 0;
+    list-style-position: inside; /* Align bullets with text */
+}
+
 footer {
     text-align: center; /* Center footer text */
     padding: 10px;
