@@ -58,6 +58,24 @@ section h3 {
     text-align: center;
 }
 
+.values-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.value-item {
+    flex: 1 1 200px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px); /* Lift effect from original design */
+}
+
 .portfolio-container {
     display: flex;
     flex-wrap: wrap;
