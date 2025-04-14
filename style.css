@@ -2,6 +2,8 @@ body {
     background-color: #FFFFFF; /* White background */
     color: #333333; /* Dark gray text for readability */
     font-family: Arial, sans-serif;
+    margin: 0; /* Remove default margin for full-width layout */
+    padding: 0;
 }
 
 header {
@@ -14,12 +16,15 @@ header {
 nav {
     background-color: #006666; /* Darker teal for contrast */
     padding: 10px;
+    text-align: center; /* Center nav links */
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
+    margin: 0 10px; /* Space out links */
+    transition: background-color 0.3s; /* Smooth hover transition */
 }
 
 nav a:hover {
@@ -32,8 +37,67 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #006666;
+}
+
+section {
+    padding: 20px;
+    background: #F9F9F9; /* Light gray for section contrast */
+    margin: 10px;
+    border-radius: 8px;
+}
+
+section h3 {
+    font-size: 1.5em;
+    color: #333333;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.portfolio-item {
+    flex: 1 1 250px; /* Minimum width for responsiveness */
+    margin: 10px;
+    text-align: center;
+    background: #FFFFFF; /* White background for items */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #E6F2F2; /* Light teal tint on hover */
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    max-height: 200px; /* Limit height for large Notion images */
+    object-fit: cover; /* Scale images without distortion */
+}
+
+.portfolio-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333333;
+}
+
+.portfolio-item p {
+    font-size: 0.9em;
+    color: #666666;
 }
