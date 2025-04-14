@@ -72,66 +72,78 @@
 
     <section id="portfolio">
         <h2>Portfolio</h2>
-        <p>Explore some of my recent projects showcasing my skills in graphic design and project management.</p>
+        <p>Explore my latest projects in a futuristic showcase of graphic design and project management.</p>
 
         <!-- Logos Album -->
         <h3>Logo Designs</h3>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <img src="Images/logo 1.png" alt="Clarity Craft">
-                <h3>Clarity Craft</h3>
-                <p>Minimalist 'CC' logo reflecting clarity, creativity, and a strong brand identity.</p>
+        <div class="portfolio-container" id="logos-container">
+            <button class="scroll-arrow left-arrow" onclick="scrollPortfolio('logos-container', 'left')">&#10094;</button>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="Images/logo 1.png" alt="Clarity Craft">
+                    <h3>Clarity Craft</h3>
+                    <p>Minimalist 'CC' logo reflecting clarity, creativity, and a strong brand identity.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/logo 2.png" alt="Glossé">
+                    <h3>Glossé</h3>
+                    <p>Sleek logo embodying elegance, sophistication, and timeless beauty.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/logo 3.png" alt="Nomad Nest">
+                    <h3>Nomad Nest</h3>
+                    <p>Inviting logo with a sleek roof design symbolizing comfort and travel.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/logo 4.png" alt="Hinlo LLC">
+                    <h3>Hinlo LLC</h3>
+                    <p>Striking logo with strong typography for a trustworthy brand presence.</p>
+                </div>
             </div>
-            <div class="portfolio-item">
-                <img src="Images/logo 2.png" alt="Glossé">
-                <h3>Glossé</h3>
-                <p>Sleek logo embodying elegance, sophistication, and timeless beauty.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="Images/logo 3.png" alt="Nomad Nest">
-                <h3>Nomad Nest</h3>
-                <p>Inviting logo with a sleek roof design symbolizing comfort and travel.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="Images/logo 4.png" alt="Hinlo LLC">
-                <h3>Hinlo LLC</h3>
-                <p>Striking logo with strong typography for a trustworthy brand presence.</p>
-            </div>
+            <button class="scroll-arrow right-arrow" onclick="scrollPortfolio('logos-container', 'right')">&#10095;</button>
         </div>
 
         <!-- Project Management Tools Album -->
         <h3>Project Management Tools</h3>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <img src="Images/project-planner-template.png" alt="Project Planner Template">
-                <h3>Project Planner Template</h3>
-                <p>A customizable Canva template to plan projects with tasks, milestones, and resources.</p>
+        <div class="portfolio-container" id="tools-container">
+            <button class="scroll-arrow left-arrow" onclick="scrollPortfolio('tools-container', 'left')">&#10094;</button>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="Images/project-planner-template.png" alt="Project Planner Template">
+                    <h3>Project Planner Template</h3>
+                    <p>A customizable Canva template to plan projects with tasks, milestones, and resources.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/workflow-optimization.png" alt="Workflow Optimization Diagram">
+                    <h3>Workflow Optimization Diagram</h3>
+                    <p>A flowchart to streamline task management, boosting efficiency by 30%.</p>
+                </div>
             </div>
-            <div class="portfolio-item">
-                <img src="Images/workflow-optimization.png" alt="Workflow Optimization Diagram">
-                <h3>Workflow Optimization Diagram</h3>
-                <p>A flowchart to streamline task management, boosting efficiency by 30%.</p>
-            </div>
+            <button class="scroll-arrow right-arrow" onclick="scrollPortfolio('tools-container', 'right')">&#10095;</button>
         </div>
 
         <!-- Notion Workspace Album -->
         <h3>Notion Workspace</h3>
-        <div class="portfolio-container">
-            <div class="portfolio-item">
-                <img src="Images/notion page 1 2.png" alt="Notion Workspace Dashboard">
-                <h3>Notion Dashboard</h3>
-                <p>A centralized hub for task tracking, project planning, and team collaboration.</p>
+        <div class="portfolio-container" id="notion-container">
+            <button class="scroll-arrow left-arrow" onclick="scrollPortfolio('notion-container', 'left')">&#10094;</button>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="Images/notion page 1 2.png" alt="Notion Workspace Dashboard">
+                    <h3>Notion Dashboard</h3>
+                    <p>A centralized hub for task tracking, project planning, and team collaboration.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/notion page 3.png" alt="Notion Task Board">
+                    <h3>Notion Task Board</h3>
+                    <p>Kanban-style board for managing tasks with clear status updates and deadlines.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/notion page 4 5.png" alt="Notion Resource Hub">
+                    <h3>Notion Resource Hub</h3>
+                    <p>Organized database for storing documents, links, and project resources.</p>
+                </div>
             </div>
-            <div class="portfolio-item">
-                <img src="Images/notion page 3.png" alt="Notion Task Board">
-                <h3>Notion Task Board</h3>
-                <p>Kanban-style board for managing tasks with clear status updates and deadlines.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="Images/notion page 4 5.png" alt="Notion Resource Hub">
-                <h3>Notion Resource Hub</h3>
-                <p>Organized database for storing documents, links, and project resources.</p>
-            </div>
+            <button class="scroll-arrow right-arrow" onclick="scrollPortfolio('notion-container', 'right')">&#10095;</button>
         </div>
     </section>
 
@@ -145,5 +157,15 @@
         <p>© 2025 Fatima Zamora. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        function scrollPortfolio(containerId, direction) {
+            const container = document.getElementById(containerId).querySelector('.portfolio-items');
+            const scrollAmount = 300; // Adjust based on item width
+            container.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
