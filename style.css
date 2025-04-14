@@ -111,62 +111,46 @@ section h2, section h3 {
     display: none; /* Hide scrollbar Chrome/Safari */
 }
 
-/* Notion-specific spacing */
-#notion-container .portfolio-items {
-    gap: 40px; /* Space for wide items */
-}
-
 .portfolio-item {
-    flex: 0 0 280px;
+    flex: 0 0 280px; /* Fixed width */
     text-align: center;
-    background: linear-gradient(145deg, #FFFFFF, #E6F2F2);
+    background: linear-gradient(145deg, #FFFFFF, #E6F2F2); /* Subtle gradient */
     padding: 15px;
     border-radius: 10px;
     scroll-snap-align: center;
     animation: slideIn 0.5s ease-out forwards;
-    opacity: 0;
+    opacity: 0; /* For entrance */
     transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Notion-specific size */
-#notion-container .portfolio-item {
-    flex: 0 0 840px; /* 3x original 280px */
-}
-
-.portfolio-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    max-height: 200px;
-    object-fit: cover;
-    border: 2px solid #008080;
-    display: block;
-    margin: 0 auto; /* Center image horizontally */
-}
-
-/* Notion-specific image size */
-#notion-container .portfolio-item img {
-    width: 840px; /* Exact size to avoid scaling */
-    height: 400px;
-    object-fit: contain; /* Show full image */
-    max-width: none; /* Prevent scaling */
-    max-height: none;
-    image-rendering: crisp-edges; /* Sharpen text/icons */
-    image-rendering: -webkit-optimize-contrast; /* Chrome/Safari clarity */
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
 .portfolio-item:nth-child(2) { animation-delay: 0.2s; }
 .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
 .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
-.portfolio-item:nth-child(5) { animation-delay: 0.5s; }
 
 .portfolio-item:hover {
-    transform: scale(1.1); /* Scale entire item for all albums */
+    transform: scale(1.1); /* Scale on hover, no glow */
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    max-height: 200px;
+    object-fit: cover;
+    border: 2px solid #008080; /* Teal border */
+}
+
+.portfolio-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333333;
+}
+
+.portfolio-item p {
+    font-size: 0.9em;
+    color: #666666;
 }
 
 .scroll-arrow {
@@ -203,18 +187,4 @@ footer {
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(50px); }
     100% { opacity: 1; transform: translateX(0); }
-}
-
-/* Responsive adjustment for Notion images */
-@media (max-width: 600px) {
-    #notion-container .portfolio-item {
-        flex: 0 0 400px; /* Scale down for mobile */
-    }
-    #notion-container .portfolio-item img {
-        width: 400px; /* Match mobile item */
-        height: 200px;
-        object-fit: contain;
-        image-rendering: crisp-edges;
-        image-rendering: -webkit-optimize-contrast;
-    }
 }
