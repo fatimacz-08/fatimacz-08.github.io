@@ -159,7 +159,7 @@ section h2, section h3 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #008080;
+    background: #666666; /* Simple gray */
     color: white;
     border: none;
     padding: 10px;
@@ -170,7 +170,7 @@ section h2, section h3 {
 }
 
 .scroll-arrow:hover {
-    background: #006666;
+    background: #4d4d4d; /* Slightly darker gray for hover */
 }
 
 .left-arrow {
