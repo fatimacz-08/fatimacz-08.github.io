@@ -121,16 +121,27 @@ section h2, section h3 {
     animation: slideIn 0.5s ease-out forwards;
     opacity: 0;
     transition: transform 0.3s;
-    display: flex; /* Added to control inner content */
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: space-between; /* Space content evenly */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Specific styles for Notion album */
+#notion-container .portfolio-item {
+    flex: 0 0 490px; /* 280px × 1.75 */
+}
+
+#notion-container .portfolio-item img {
+    max-height: 350px; /* 200px × 1.75 */
+    max-width: 100%;
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
 .portfolio-item:nth-child(2) { animation-delay: 0.2s; }
 .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
 .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(5) { animation-delay: 0.5s; }
 
 .portfolio-item:hover {
     transform: scale(1.1); /* Scale on hover, no glow */
@@ -145,17 +156,6 @@ section h2, section h3 {
     border: 2px solid #008080;
     display: block;
     margin: 0 auto; /* Center image horizontally */
-}
-
-.portfolio-item h3 {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #333333;
-}
-
-.portfolio-item p {
-    font-size: 0.9em;
-    color: #666666;
 }
 
 .scroll-arrow {
