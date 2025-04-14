@@ -1,7 +1,7 @@
 body {
     background-color: #FFFFFF; /* White background */
     color: #333333; /* Dark gray text for readability */
-    font-family: 'Orbitron', Arial, sans-serif; /* Futuristic font for headings */
+    font-family: 'Orbitron', Arial, sans-serif; /* Futuristic font */
     margin: 0;
     padding: 0;
 }
@@ -54,10 +54,9 @@ section {
 section h2, section h3 {
     font-family: 'Orbitron', Arial, sans-serif;
     font-size: 1.5em;
-    color: #008080; /* Teal for futuristic headings */
+    color: #008080; /* Teal headings */
     margin: 20px 0 10px;
     text-align: center;
-    text-shadow: 0 0 5px rgba(0, 128, 128, 0.5); /* Subtle glow */
 }
 
 .values-list {
@@ -109,16 +108,15 @@ section h2, section h3 {
 }
 
 .portfolio-item {
-    flex: 0 0 280px; /* Fixed width for items */
+    flex: 0 0 280px; /* Fixed width */
     text-align: center;
     background: linear-gradient(145deg, #FFFFFF, #E6F2F2); /* Subtle gradient */
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 128, 128, 0.3); /* Neon teal glow */
     scroll-snap-align: center;
     animation: slideIn 0.5s ease-out forwards;
-    opacity: 0; /* For entrance animation */
-    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* For entrance */
+    transition: transform 0.3s;
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
@@ -127,9 +125,7 @@ section h2, section h3 {
 .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
 
 .portfolio-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 128, 128, 0.7); /* Brighter neon glow */
-    animation: pulse 0.5s infinite alternate; /* Pulse effect */
+    transform: scale(1.1); /* Scale on hover, no glow */
 }
 
 .portfolio-item img {
@@ -179,12 +175,12 @@ section h2, section h3 {
     right: 10px;
 }
 
+footer {
+    text-align: center; /* Center footer text */
+    padding: 10px;
+}
+
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(50px); }
     100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 10px rgba(0, 128, 128, 0.3); }
-    100% { box-shadow: 0 0 20px rgba(0, 128, 128, 0.7); }
 }
