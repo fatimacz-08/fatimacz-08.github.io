@@ -69,10 +69,11 @@ section h3 {
     flex: 1; /* Equal width for each item */
     margin: 0 10px; /* Horizontal spacing between items */
     text-align: center;
-    padding: 15px;
-    background: #FFFFFF; /* White background for contrast */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Extra padding for oval shape */
+    background: #FFFFFF; /* White background for oval */
+    border-radius: 50% / 30%; /* Oval: more rounded vertically, less horizontally */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: animation 0.3s ease; /* Smooth animation trigger */
 }
 
 .value-item:hover {
