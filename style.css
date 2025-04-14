@@ -112,15 +112,19 @@ section h2, section h3 {
 }
 
 .portfolio-item {
-    flex: 0 0 280px; /* Fixed width */
+    flex: 0 0 280px;
     text-align: center;
-    background: linear-gradient(145deg, #FFFFFF, #E6F2F2); /* Subtle gradient */
+    background: linear-gradient(145deg, #FFFFFF, #E6F2F2);
     padding: 15px;
     border-radius: 10px;
     scroll-snap-align: center;
     animation: slideIn 0.5s ease-out forwards;
-    opacity: 0; /* For entrance */
+    opacity: 0;
     transition: transform 0.3s;
+    display: flex; /* Added to control inner content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: space-between; /* Space content evenly */
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
@@ -136,10 +140,11 @@ section h2, section h3 {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    display: block;
     max-height: 200px;
     object-fit: cover;
-    border: 2px solid #008080; /* Teal border */
+    border: 2px solid #008080;
+    display: block;
+    margin: 0 auto; /* Center image horizontally */
 }
 
 .portfolio-item h3 {
