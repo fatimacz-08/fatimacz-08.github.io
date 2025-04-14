@@ -203,6 +203,25 @@ section h2, section h3 {
     color: #008080; /* Teal for service item titles */
 }
 
+#services ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 20px; /* Adjust spacing for checkmarks */
+}
+
+#services li {
+    position: relative; /* For positioning the checkmark */
+    padding-left: 30px; /* Space for the checkmark */
+    margin-bottom: 10px; /* Space between items */
+}
+
+#services li:before {
+    content: "✔"; /* Black checkmark Unicode */
+    position: absolute;
+    left: 0;
+    color: #333333; /* Dark gray/black */
+    font-size: 1.2em; /* Slightly larger for visibility */
+}
+
 footer {
     text-align: center; /* Center footer text */
     padding: 10px;
