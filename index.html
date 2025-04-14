@@ -8,7 +8,6 @@
     <link rel="icon" type="image/png" href="Images/fz logo.png">
 </head>
 <body>
-
     <header>
         <h1>Fatima Zamora: Your Virtual Success Partner</h1>
     </header>
@@ -123,38 +122,38 @@
         </div>
 
         <!-- Notion Workspace Album -->
-<h3>Notion Workspace</h3>
-<div class="portfolio-container" id="notion-container">
-    <button class="scroll-arrow left-arrow" onclick="scrollPortfolio('notion-container', 'left')">❮</button>
-    <div class="portfolio-items">
-        <div class="portfolio-item">
-            <img src="Images/notion page 1.png" alt="Notion Homepage">
-            <h3>Notion Homepage</h3>
-            <p>Main page showcasing the workspace with calendar, post templates, task board, and SOP.</p>
+        <h3>Notion Workspace</h3>
+        <div class="portfolio-container" id="notion-container">
+            <button class="scroll-arrow left-arrow" onclick="scrollPortfolio('notion-container', 'left')">❮</button>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="Images/notion page 1.png" alt="Notion Homepage" onclick="openModal('Images/notion page 1.png', 'Notion Homepage')">
+                    <h3>Notion Homepage</h3>
+                    <p>Main page showcasing the workspace with calendar, post templates, task board, and SOP.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/notion page 2.png" alt="Notion Content Calendar" onclick="openModal('Images/notion page 2.png', 'Notion Content Calendar')">
+                    <h3>Notion Content Calendar</h3>
+                    <p>Organized calendar for planning and scheduling social media and content creation.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/notion page 3.png" alt="Notion Post Templates" onclick="openModal('Images/notion page 3.png', 'Notion Post Templates')">
+                    <h3>Notion Post Templates</h3>
+                    <p>Templates for Instagram Reels, YouTube, and LinkedIn to streamline social media posts.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/notion page 4.png" alt="Notion Task Management Board" onclick="openModal('Images/notion page 4.png', 'Notion Task Management Board')">
+                    <h3>Notion Task Management Board</h3>
+                    <p>Kanban-style board for tracking tasks with clear status updates and deadlines.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="Images/notion page 5.png" alt="Notion SOP" onclick="openModal('Images/notion page 5.png', 'Notion SOP')">
+                    <h3>Notion SOP</h3>
+                    <p>Standard Operating Procedures documented for consistent and efficient workflows.</p>
+                </div>
+            </div>
+            <button class="scroll-arrow right-arrow" onclick="scrollPortfolio('notion-container', 'right')">❯</button>
         </div>
-        <div class="portfolio-item">
-            <img src="Images/notion page 2.png" alt="Notion Content Calendar">
-            <h3>Notion Content Calendar</h3>
-            <p>Organized calendar for planning and scheduling social media and content creation.</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="Images/notion page 3.png" alt="Notion Post Templates">
-            <h3>Notion Post Templates</h3>
-            <p>Templates for Instagram Reels, YouTube, and LinkedIn to streamline social media posts.</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="Images/notion page 4.png" alt="Notion Task Management Board">
-            <h3>Notion Task Management Board</h3>
-            <p>Kanban-style board for tracking tasks with clear status updates and deadlines.</p>
-        </div>
-        <div class="portfolio-item">
-            <img src="Images/notion page 5.png" alt="Notion SOP">
-            <h3>Notion SOP</h3>
-            <p>Standard Operating Procedures documented for consistent and efficient workflows.</p>
-        </div>
-    </div>
-    <button class="scroll-arrow right-arrow" onclick="scrollPortfolio('notion-container', 'right')">❯</button>
-</div>
     </section>
 
     <section id="contact">
@@ -167,6 +166,13 @@
         <p>© 2025 Fatima Zamora. All Rights Reserved.</p>
     </footer>
 
+    <!-- Modal for enlarged images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <div id="modalCaption"></div>
+    </div>
+
     <script>
         function scrollPortfolio(containerId, direction) {
             const container = document.getElementById(containerId).querySelector('.portfolio-items');
@@ -175,6 +181,31 @@
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
             });
+        }
+
+        function openModal(src, alt) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const captionText = document.getElementById('modalCaption');
+            modal.style.display = 'block';
+            modalImg.src = src;
+            modalImg.alt = alt;
+            captionText.innerText = alt;
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
