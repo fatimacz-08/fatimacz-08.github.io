@@ -6,14 +6,6 @@ body {
     padding: 0;
 }
 
-main {
-    transition: filter 0.3s ease; /* Smooth blur transition */
-}
-
-main.blur {
-    filter: blur(5px); /* Blur background when Notion image is hovered */
-}
-
 header {
     background-color: #008080; /* Teal header */
     color: white;
@@ -119,6 +111,11 @@ section h2, section h3 {
     display: none; /* Hide scrollbar Chrome/Safari */
 }
 
+/* Notion-specific spacing */
+#notion-container .portfolio-items {
+    gap: 40px; /* Space for wide items */
+}
+
 .portfolio-item {
     flex: 0 0 280px;
     text-align: center;
@@ -133,7 +130,11 @@ section h2, section h3 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* Ensure container for absolute positioning */
+}
+
+/* Notion-specific size */
+#notion-container .portfolio-item {
+    flex: 0 0 840px; /* 3x original 280px */
 }
 
 .portfolio-item img {
@@ -147,31 +148,9 @@ section h2, section h3 {
     margin: 0 auto; /* Center image horizontally */
 }
 
-/* Notion-specific hover styles */
+/* Notion-specific image size */
 #notion-container .portfolio-item img {
-    transition: transform 0.3s ease, object-fit 0.3s ease; /* Smooth zoom and fit */
-    object-fit: cover; /* Default state */
-}
-
-#notion-container .portfolio-item img:hover {
-    transform: scale(1.5); /* Zoom to 1.5x */
-    object-fit: contain; /* Show full image on hover */
-    z-index: 20; /* Higher to stay above all images */
-    position: absolute; /* Lift out of flex flow */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%) scale(1.5); /* Center and zoom */
-}
-
-/* Blur background on hover */
-#notion-container .portfolio-item:hover ~ main,
-#notion-container .portfolio-item img:hover ~ main {
-    filter: blur(5px); /* Blur background */
-}
-
-/* Prevent scaling entire item for Notion on hover */
-#notion-container .portfolio-item:hover {
-    transform: none; /* Override default scale(1.1) */
+    max-height: 400px; /* 2x original 200px */
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
@@ -181,7 +160,7 @@ section h2, section h3 {
 .portfolio-item:nth-child(5) { animation-delay: 0.5s; }
 
 .portfolio-item:hover {
-    transform: scale(1.1); /* Scale entire item for Logos/Tools */
+    transform: scale(1.1); /* Scale entire item for all albums */
 }
 
 .scroll-arrow {
@@ -218,4 +197,14 @@ footer {
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(50px); }
     100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive adjustment for Notion images */
+@media (max-width: 600px) {
+    #notion-container .portfolio-item {
+        flex: 0 0 400px; /* Scale down for mobile */
+    }
+    #notion-container .portfolio-item img {
+        max-height: 200px; /* Smaller height for mobile */
+    }
 }
