@@ -1,7 +1,7 @@
 body {
     background-color: #FFFFFF; /* White background */
     color: #333333; /* Dark gray text for readability */
-    font-family: 'Orbitron', Arial, sans-serif; /* Futuristic font */
+    font-family: Arial, sans-serif; /* Original font */
     margin: 0;
     padding: 0;
 }
@@ -52,7 +52,7 @@ section {
 }
 
 section h2, section h3 {
-    font-family: 'Orbitron', Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Original font */
     font-size: 1.5em;
     color: #008080; /* Teal headings */
     margin: 20px 0 10px;
