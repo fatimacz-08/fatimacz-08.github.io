@@ -135,6 +135,12 @@ section h2, section h3 {
 #notion-container .portfolio-item img {
     max-height: 350px; /* 200px × 1.75 */
     max-width: 100%;
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+#notion-container .portfolio-item img:hover {
+    transform: scale(1.5); /* Zoom 1.5x on hover */
+    z-index: 10; /* Ensure image stays above others */
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
@@ -144,7 +150,7 @@ section h2, section h3 {
 .portfolio-item:nth-child(5) { animation-delay: 0.5s; }
 
 .portfolio-item:hover {
-    transform: scale(1.1); /* Scale on hover, no glow */
+    transform: scale(1.1); /* Scale entire item for non-Notion albums */
 }
 
 .portfolio-item img {
