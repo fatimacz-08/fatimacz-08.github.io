@@ -22,12 +22,14 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 12px; /* Increased for touch */
     margin: 0 10px;
+    min-height: 44px; /* Touch-friendly size */
+    display: inline-block; /* Ensure tap area */
     transition: background-color 0.3s;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
     background-color: #004C4C; /* Even darker teal */
 }
 
@@ -35,17 +37,19 @@ button {
     background-color: #008080;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px; /* Increased for touch */
+    min-width: 44px; /* Touch-friendly */
+    min-height: 44px; /* Touch-friendly */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
+button:hover, button:focus {
     background-color: #006666;
 }
 
 section {
-    padding: 20px;
+    padding: 15px; /* Reduced for mobile */
     background: #F9F9F9; /* Light gray for contrast */
     margin: 10px;
     border-radius: 8px;
@@ -53,9 +57,9 @@ section {
 
 section h2, section h3 {
     font-family: Arial, sans-serif; /* Original font */
-    font-size: 1.5em;
+    font-size: 1.3rem; /* Adjusted for mobile */
     color: #008080; /* Teal headings */
-    margin: 20px 0 10px;
+    margin: 15px 0 10px; /* Reduced margin */
     text-align: center;
 }
 
@@ -74,14 +78,17 @@ section h2, section h3 {
     flex: 1;
     margin: 0 10px;
     text-align: center;
-    padding: 20px;
+    padding: 15px; /* Slightly reduced */
     background: #FFFFFF; /* White oval */
     border-radius: 50% / 30%; /* Oval shape */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.value-item:hover {
-    animation: bounce 0.4s ease;
+/* Disable hover animation on mobile */
+@media (max-width: 430px) {
+    .value-item:hover {
+        animation: none;
+    }
 }
 
 @keyframes bounce {
@@ -105,6 +112,7 @@ section h2, section h3 {
     gap: 20px;
     padding: 10px 0;
     scrollbar-width: none; /* Hide scrollbar Firefox */
+    -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
 }
 
 .portfolio-items::-webkit-scrollbar {
@@ -112,7 +120,8 @@ section h2, section h3 {
 }
 
 .portfolio-item {
-    flex: 0 0 280px; /* Fixed width */
+    flex: 0 0 90%; /* Scale to viewport */
+    max-width: 300px; /* Cap for larger iPhones */
     text-align: center;
     background: #FFFFFF; /* Solid white background */
     padding: 15px;
@@ -128,8 +137,11 @@ section h2, section h3 {
 .portfolio-item:nth-child(3) { animation-delay: 0.3s; }
 .portfolio-item:nth-child(4) { animation-delay: 0.4s; }
 
-.portfolio-item:hover {
-    transform: scale(1.1); /* Scale on hover, no glow */
+/* Disable hover on mobile */
+@media (max-width: 430px) {
+    .portfolio-item:hover {
+        transform: none;
+    }
 }
 
 .portfolio-item img {
@@ -146,12 +158,12 @@ section h2, section h3 {
 
 .portfolio-item h3 {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.1rem; /* Adjusted for mobile */
     color: #333333;
 }
 
 .portfolio-item p {
-    font-size: 0.9em;
+    font-size: 0.85rem; /* Adjusted for mobile */
     color: #666666;
 }
 
@@ -162,14 +174,16 @@ section h2, section h3 {
     background: #666666; /* Simple gray */
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px; /* Increased for touch */
+    min-width: 44px; /* Touch-friendly */
+    min-height: 44px; /* Touch-friendly */
     cursor: pointer;
     font-size: 1.2em;
     border-radius: 50%;
     transition: background-color 0.3s;
 }
 
-.scroll-arrow:hover {
+.scroll-arrow:hover, .scroll-arrow:focus {
     background: #4d4d4d; /* Slightly darker gray for hover */
 }
 
@@ -197,4 +211,26 @@ footer {
 @keyframes slideIn {
     0% { opacity: 0; transform: translateX(50px); }
     100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Media query for iPhone screens */
+@media (max-width: 430px) {
+    .values-list {
+        flex-wrap: wrap; /* Stack vertically */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-item {
+        width: 80%; /* Full width on small screens */
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .portfolio-container {
+        padding: 0 20px; /* Reduce arrow space */
+    }
 }
