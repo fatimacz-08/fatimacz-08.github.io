@@ -60,20 +60,30 @@ section h3 {
 
 .values-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap; /* Force single row */
+    justify-content: space-between; /* Spread items evenly */
     margin-top: 15px;
 }
 
 .value-item {
-    flex: 1 1 200px;
-    margin: 10px;
+    flex: 1; /* Equal width for each item */
+    margin: 0 10px; /* Horizontal spacing between items */
     text-align: center;
-    transition: transform 0.3s ease;
+    padding: 15px;
+    background: #FFFFFF; /* White background for contrast */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .value-item:hover {
-    transform: translateY(-5px); /* Lift effect from original design */
+    animation: bounce 0.4s ease; /* Bounce animation on hover */
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    75% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
 }
 
 .portfolio-container {
