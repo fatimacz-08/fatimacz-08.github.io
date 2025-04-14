@@ -150,7 +150,13 @@ section h2, section h3 {
 
 /* Notion-specific image size */
 #notion-container .portfolio-item img {
-    max-height: 400px; /* 2x original 200px */
+    width: 840px; /* Exact size to avoid scaling */
+    height: 400px;
+    object-fit: contain; /* Show full image */
+    max-width: none; /* Prevent scaling */
+    max-height: none;
+    image-rendering: crisp-edges; /* Sharpen text/icons */
+    image-rendering: -webkit-optimize-contrast; /* Chrome/Safari clarity */
 }
 
 .portfolio-item:nth-child(1) { animation-delay: 0.1s; }
@@ -205,6 +211,10 @@ footer {
         flex: 0 0 400px; /* Scale down for mobile */
     }
     #notion-container .portfolio-item img {
-        max-height: 200px; /* Smaller height for mobile */
+        width: 400px; /* Match mobile item */
+        height: 200px;
+        object-fit: contain;
+        image-rendering: crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
     }
 }
