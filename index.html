@@ -171,7 +171,7 @@
     <script>
         function scrollPortfolio(containerId, direction) {
             const container = document.getElementById(containerId).querySelector('.portfolio-items');
-            const scrollAmount = 300; // Adjust based on item width
+            const scrollAmount = containerId === 'notion-container' ? 840 : 300; // Wider for Notion
             container.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
