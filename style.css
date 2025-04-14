@@ -59,6 +59,10 @@ section h2, section h3 {
     text-align: center;
 }
 
+.centered-intro {
+    text-align: center; /* Center specific intro text */
+}
+
 .values-list {
     display: flex;
     flex-wrap: nowrap; /* Single row */
