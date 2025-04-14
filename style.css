@@ -133,6 +133,7 @@ section h2, section h3 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: relative; /* Ensure container for absolute positioning */
 }
 
 .portfolio-item img {
@@ -148,20 +149,24 @@ section h2, section h3 {
 
 /* Notion-specific hover styles */
 #notion-container .portfolio-item img {
-    transition: transform 0.3s ease; /* Smooth zoom */
+    transition: transform 0.3s ease, object-fit 0.3s ease; /* Smooth zoom and fit */
     object-fit: cover; /* Default state */
 }
 
 #notion-container .portfolio-item img:hover {
     transform: scale(1.5); /* Zoom to 1.5x */
     object-fit: contain; /* Show full image on hover */
-    z-index: 10; /* Stay above blurred background */
-    position: relative; /* Ensure stacking context */
+    z-index: 20; /* Higher to stay above all images */
+    position: absolute; /* Lift out of flex flow */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) scale(1.5); /* Center and zoom */
 }
 
-#notion-container .portfolio-item img:hover ~ main,
-#notion-container .portfolio-item:hover main {
-    filter: blur(5px); /* Blur background on hover */
+/* Blur background on hover */
+#notion-container .portfolio-item:hover ~ main,
+#notion-container .portfolio-item img:hover ~ main {
+    filter: blur(5px); /* Blur background */
 }
 
 /* Prevent scaling entire item for Notion on hover */
