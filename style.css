@@ -12,7 +12,12 @@ header {
     padding: 20px;
     text-align: center;
 }
-
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: white;
+    margin: 0;
+}
 nav {
     background-color: #006666; /* Darker teal */
     padding: 6px 10px;
