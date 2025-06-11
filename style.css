@@ -15,17 +15,18 @@ header {
 
 nav {
     background-color: #006666; /* Darker teal */
-    padding: 10px;
+    padding: 6px 10px;
     text-align: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 12px; /* Increased for touch */
+    padding: 8px 12px; /* Increased for touch */
     margin: 0 10px;
-    min-height: 44px; /* Touch-friendly size */
+    min-height: auto; /* Touch-friendly size */
     display: inline-block; /* Ensure tap area */
+    line-height: 1.4;
     transition: background-color 0.3s;
 }
 
