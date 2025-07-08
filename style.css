@@ -1,7 +1,7 @@
 body {
     background-color: #FFFFFF; /* White background */
     color: #333333; /* Dark gray text for readability */
-    font-family: Arial, sans-serif; /* Original font */
+    font-family: 'Cormorant Garamond', serif;
     margin: 0;
     padding: 0;
 }
@@ -63,10 +63,11 @@ section {
 }
 
 section h2, section h3 {
-    font-family: Arial, sans-serif; /* Original font */
-    font-size: 1.3rem; /* Adjusted for mobile */
-    color: #008080; /* Teal headings */
-    margin: 15px 0 10px; /* Reduced margin */
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #008080;
+    margin: 15px 0 10px;
     text-align: center;
 }
 
