@@ -281,3 +281,13 @@ footer {
         transform: none; /* No zoom on mobile */
     }
 }
+.about-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #008080;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
